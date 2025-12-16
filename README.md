@@ -5,6 +5,9 @@
 Voici une idée de projet que j'ai commencé ce weekend.  
 Je me suis inspiré de [ce projet](https://github.com/RafaelKuebler/Flocking) pour la base de code.  
 J'ai commencé par importer des modèles 3D de bateaux.  
+
+![Preview Model Boat Club Simulator](model_boat_club_simulator_preview.gif)
+
 J'ai créé 2~3 [Prefab](https://docs.unity3d.com/6000.2/Documentation/Manual/Prefabs.html) mais je me retrouve face à plusieurs problèmes et j'aurais besoin de ton coup de mains !  
   
 **:information_source: Tu peux déjà commencer par te créer une version de mon projet en [forkant](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo?tool=webui#forking-a-repository) 👉 [mon repo](https://github.com/romainPechot/Model-Boat-Club-Simulator).**  

@@ -3,7 +3,11 @@ guid: 4385f3f32ee5acd469979ee445ac7134
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - boatHouseA: {instanceID: 0}
+  - boatHouseB: {instanceID: 0}
+  - boatHouseC: {instanceID: 0}
+  - boatSettings: {fileID: 11400000, guid: bf5e25fbde57df44181b2fa7608eba99, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

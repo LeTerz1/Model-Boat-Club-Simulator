@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd3e66d8d5be4a4aa0d7a875875d56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boatSettings: {fileID: 11400000, guid: bf5e25fbde57df44181b2fa7608eba99, type: 2}
 --- !u!135 &8576074011543180583
 SphereCollider:
   m_ObjectHideFlags: 0

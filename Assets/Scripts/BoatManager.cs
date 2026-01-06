@@ -19,47 +19,15 @@ public class BoatManager : MonoBehaviour
     }
 
     [SerializeField]
-    private float width = 16f;
+    public GameObject boatHouseA = null;
 
     [SerializeField]
-    private float length = 9f;
-
-    [Range(0, 300)]
-    [SerializeField]
-    private int SpawningCount;
+    public GameObject boatHouseB = null;
 
     [SerializeField]
-    private GameObject boatHouseA = null;
+    public GameObject boatHouseC = null;
 
-    [SerializeField]
-    private GameObject boatHouseB = null;
-
-    [SerializeField]
-    private GameObject boatHouseC = null;
-
-    [Range(0, 10)]
-    public float maxSpeed = 6f;
-
-    [Range(0.1f, 45f)]
-    public float steeringSpeed = 4.5f;
-
-    [Range(.01f, .5f)]
-    public float maxForce = .03f;
-
-    [Range(1, 10)]
-    public float neighborhoodRadius = 4f;
-
-    [Range(0.1f, 10f)]
-    public float separationRadius = 2.4f;
-
-    [Range(0, 3)]
-    public float separationAmount = 1.1f;
-
-    [Range(0, 3)]
-    public float cohesionAmount = 0.3f;
-
-    [Range(0, 3)]
-    public float alignmentAmount = 0.5f;
+    public ScriptableBoat boatSettings;
 
     private List<GameObject> boatsInstances = new List<GameObject>();
 
@@ -79,10 +47,10 @@ public class BoatManager : MonoBehaviour
     private void Start()
     {
         // On génère un nombre de bateau au départ.
-        for (int i = 0; i < SpawningCount; i++)
+        for (int i = 0; i < boatSettings.SpawningCount; i++)
         {
             // On choisi une position et une orientation au hasard dans la zone de jeu.
-            Vector3 randomPosition = new Vector3((Random.value - 0.5f) * width, 0f, (Random.value - 0.5f) * length);
+            Vector3 randomPosition = new Vector3((Random.value - 0.5f) * boatSettings.width, 0f, (Random.value - 0.5f) * boatSettings.length);
             Quaternion randomRotation = Quaternion.Euler(0f, Random.value * 360f, 0f);
             SpawnBoat(randomPosition, randomRotation);
         }
@@ -142,28 +110,28 @@ public class BoatManager : MonoBehaviour
             bool positionHasChanged = false;
 
             // Left border?
-            if (localPosition.x < -width * 0.5f)
+            if (localPosition.x < -boatSettings.width * 0.5f)
             {
-                localPosition.x += width;
+                localPosition.x += boatSettings.width;
                 positionHasChanged = true;
             }
             // Right border?
-            else if (localPosition.x > width * 0.5f)
+            else if (localPosition.x > boatSettings.width * 0.5f)
             {
-                localPosition.x -= width;
+                localPosition.x -= boatSettings.width;
                 positionHasChanged = true;
             }
 
             // Top border?
-            if (localPosition.z > length * 0.5f)
+            if (localPosition.z > boatSettings.length * 0.5f)
             {
-                localPosition.z -= length;
+                localPosition.z -= boatSettings.length;
                 positionHasChanged = true;
             }
             // Bottom border?
-            else if (localPosition.z < -length * 0.5f)
+            else if (localPosition.z < -boatSettings.length * 0.5f)
             {
-                localPosition.z += length;
+                localPosition.z += boatSettings.length;
                 positionHasChanged = true;
             }
 
@@ -179,6 +147,6 @@ public class BoatManager : MonoBehaviour
         Gizmos.color = Color.cyan;
 
         // Draw top border
-        Gizmos.DrawWireCube(transform.position, new Vector3(width, 0f, length));
+        Gizmos.DrawWireCube(transform.position, new Vector3(boatSettings.width, 0f, boatSettings.length));
     }
 }

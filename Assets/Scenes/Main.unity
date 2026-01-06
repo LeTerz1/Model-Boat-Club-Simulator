@@ -241,11 +241,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4385f3f32ee5acd469979ee445ac7134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boatHouseA: {fileID: 6649347343663618492, guid: ab9232092c73daa44966cdc8ac7044eb,
-    type: 3}
-  boatHouseB: {fileID: 6649347343663618492, guid: d8ea09c4b839e694f85569d4b0c93672,
-    type: 3}
-  boatHouseC: {fileID: 1138331384927246, guid: be18bd8f4343bb14daad0d183019b6aa, type: 3}
+  boatFamilies:
+  - familyName: Speed
+    variants:
+    - {fileID: 6649347343663618492, guid: ab9232092c73daa44966cdc8ac7044eb, type: 3}
+    - {fileID: 2907829130696346493, guid: 422590c151640be4dbd602a81d50feb6, type: 3}
+    - {fileID: 2907829130696346493, guid: 686685c4f385a544488ead44d58ebed9, type: 3}
+  - familyName: Voile
+    variants:
+    - {fileID: 6649347343663618492, guid: d8ea09c4b839e694f85569d4b0c93672, type: 3}
+    - {fileID: 9111101563587514973, guid: f99968dbc79f9194cb968a8cb27a87f8, type: 3}
+    - {fileID: 9111101563587514973, guid: 3aadca93d0aea9e42898a6ed38de8ffd, type: 3}
   boatSettings: {fileID: 11400000, guid: bf5e25fbde57df44181b2fa7608eba99, type: 2}
 --- !u!4 &576343055
 Transform:

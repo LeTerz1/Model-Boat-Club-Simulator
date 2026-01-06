@@ -18,14 +18,7 @@ public class BoatManager : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    public GameObject boatHouseA = null;
-
-    [SerializeField]
-    public GameObject boatHouseB = null;
-
-    [SerializeField]
-    public GameObject boatHouseC = null;
+    [SerializeField] private BoatFamily[] boatFamilies;
 
     public ScriptableBoat boatSettings;
 
@@ -70,27 +63,17 @@ public class BoatManager : MonoBehaviour
 
     private GameObject GetRandomBoat()
     {
-        GameObject randomBoat = null;
+        int randomFamilyIndex = Random.Range(0, boatFamilies.Length);
+        BoatFamily selectedFamily = boatFamilies[randomFamilyIndex];
 
-        // On prend une variable aléatoire entre 0.000 et 1.000
-        float randomValue = Random.value;
-        if (randomValue < 0.333f)
-        {
-            randomBoat = boatHouseA;
-        }
-        else if (randomValue < 0.666f)
-        {
-            randomBoat = boatHouseB;
-        }
-        else
-        {
-            randomBoat = boatHouseC;
-        }
+        int randomVariantIndex = Random.Range(0, selectedFamily.variants.Length);
+        return selectedFamily.variants[randomVariantIndex];
+
+
         // TODO Je ne vais pas rajouter un "if..else" pour chaque nouveau bateau ?!
         // Il devrait y avoir un moyen de réunir mes Prefab dans une liste et
         // d'en choisir un selon sa place dans la liste...
 
-        return randomBoat;
     }
 
     private void LateUpdate()

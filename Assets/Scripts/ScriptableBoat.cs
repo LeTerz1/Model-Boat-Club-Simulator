@@ -11,7 +11,7 @@ public class ScriptableBoat : ScriptableObject
 
     [Range(0, 300)]
     [SerializeField]
-    public int SpawningCount;
+    public int SpawningCount;   
 
     [Range(0, 10)]
     public float maxSpeed = 6f;
